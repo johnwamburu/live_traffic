@@ -1,0 +1,73 @@
+
+// my views
+$(document).ready(function () {
+	$('#ajax_loader_image').hide();
+        $("#id_second_field").change(function () {
+	var e1 = document.getElementById("id_first_field");
+	var form = e1.options[e1.selectedIndex].value;
+	var e2 = document.getElementById("id_second_field");
+	var stream = e2.options[e2.selectedIndex].value;
+	if (stream == ""){$('#list_table').html(''); $('#t_container').show();return;}
+	else{
+	var csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+	$('#ajax_loader_image').show();
+        $.ajax({
+            url: "/students/ajax_lists",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : stream,
+                csrfmiddlewaretoken: csrf
+            },
+            success: function (data) {
+                $('#list_table').html(data);
+		$('#t_container').hide();
+		$('#ajax_loader_image').hide();
+            },
+            error: function (xhr, errmsg, err) {
+		alert(xhr.status + ": " + xhr.responseText);alert(errmsg);
+            }
+           });}
+           return false;
+        });
+
+	//assign subjects
+	$("#id_stream").change(function () {
+	var e1 = document.getElementById("id_form");
+	var form = e1.options[e1.selectedIndex].value;
+	var e2 = document.getElementById("id_stream");
+	var stream = e2.options[e2.selectedIndex].value;
+	if (stream == ""){$('#list_table').html(''); $('#t_container').show();return;}
+	else{
+	var csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+	$('#ajax_loader_image').show();
+        $.ajax({
+            url: "/exams/ajax_subject_lists",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : stream,
+                csrfmiddlewaretoken: csrf
+            },
+            success: function (data) {
+                $('#list_table').html(data);
+		$('#t_container').hide();
+		$('#ajax_loader_image').hide();
+            },
+            error: function (xhr, errmsg, err) {
+		alert(xhr.status + ": " + xhr.responseText);alert(errmsg);
+            }
+           });}
+           return false;
+        });
+});
+
+//get classes form in assigning subjects
+function get_classes() {
+    alert('john');
+}
+
+//get students in assigning subjects
+function get_subject_lists() {
+    alert('john');
+}

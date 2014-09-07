@@ -1,0 +1,9 @@
+/* This is how I sort them exams! */
+
+var $container = $('#container');
+// init
+$container.isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});

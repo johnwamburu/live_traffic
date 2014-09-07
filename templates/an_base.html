@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <!--<meta http-equiv="refresh" content="5" />-->
+
+    <title>{% block title %}Traffic Analytics{% endblock %}</title>
+
+    {% block styles %} {% endblock %}
+
+    <link rel='stylesheet' type='text/css' href='/static/style.css' />
+    <link rel="stylesheet" href="/static/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/static/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+    <script src="/static/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+    {% block scripts %}{% endblock %}
+
+    {% block extras %} {% endblock %}
+</head>
+<body>
+	<div class="header">
+	<div class="wrapper">
+		<div class="logo">
+			<p>Traffic Analytics</p>
+		</div>
+		<div class="cssmenu" id="cssmenu">
+		    <ul id="nav">
+			<li><a href="{% url 'analytics' %}" class="first">Home</a></li>
+		    </ul>
+		</div>
+	</div>
+	</div>
+
+	<div class="wrapper">
+	{% block header %}
+
+	{% endblock %}
+
+	{%if messages%}
+	    {%for message in messages%}
+		<p class="notification">{{message}}</p>
+	    {%endfor%}
+	{%endif%}
+
+	{% block sidebar %} {% endblock %}
+
+	{% block content %}
+	
+	{% endblock %}
+	<div class="clear"></div>
+	</div>
+
+	<div class="footer">
+		<p class="credits">By Me, For Eric & Aisha.</p>
+	</div>
+
+<script src="/static/jQuery.effects.js" type="text/javascript"></script>
+<script src="/static/scripts.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

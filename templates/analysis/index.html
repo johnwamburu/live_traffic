@@ -1,0 +1,107 @@
+{% extends "an_base.html" %}
+
+{% block title %}Analytics{% endblock %}
+
+{% block scripts %}
+<script src="/static/assets/javascript/highcharts1.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/assets/javascript/exporting.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/assets/javascript/analytics_menu/menu_jquery.js" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
+
+{% block extras %}
+<script>
+$(document).ready(function() {
+    var myDate0 = new Date("{{response.0.time_analyzed}}");
+    var myDate1 = new Date("{{response.1.time_analyzed}}");
+    var myDate2 = new Date("{{response.2.time_analyzed}}");
+    var myDate3 = new Date("{{response.3.time_analyzed}}");
+    var myDate4 = new Date("{{response.4.time_analyzed}}");
+    var myDate5 = new Date("{{response.5.time_analyzed}}");
+    var myDate6 = new Date("{{response.6.time_analyzed}}");
+    var myDate7 = new Date("{{response.7.time_analyzed}}");
+    var myDate8 = new Date("{{response.8.time_analyzed}}");
+    var myDate9 = new Date("{{response.9.time_analyzed}}");
+
+    $('#graphs').highcharts({
+        chart: {
+            type: 'column'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: 'Distribution Of Vehicles Over Time'
+        },
+        subtitle: {
+            text: 'Cars passing Chaka Road over time'
+        },
+        xAxis: {
+            categories: [
+                myDate0.toUTCString(),
+                myDate1.toUTCString(),
+                myDate2.toUTCString(),
+                myDate3.toUTCString(),
+                myDate4.toUTCString(),
+                myDate5.toUTCString(),
+                myDate6.toUTCString(),
+                myDate7.toUTCString(),
+                myDate8.toUTCString(),
+                myDate9.toUTCString(),
+            ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Cars'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Cars',
+            data: [{{response.0.number_of_cars}}, {{response.1.number_of_cars}}, {{response.2.number_of_cars}}, {{response.3.number_of_cars}}, {{response.4.number_of_cars}}, {{response.5.number_of_cars}}, {{response.6.number_of_cars}}, {{response.7.number_of_cars}}, {{response.8.number_of_cars}}, {{response.9.number_of_cars}}]
+
+        }]
+    });
+});
+</script>
+{% endblock %}
+
+{% block header %}
+		<div class="top-bar">
+			<div class="left-bar">
+			<img src="/static/icon.png" width="48" height="48" alt="">
+			<h3>Live Feed - Chaka Road</h3>
+			</div>
+			<div class="right-bar"><a class="global-back">Refresh</a></div>
+		</div>
+{% endblock %}
+
+{% block content %}
+		<div class="news-box">
+			<div class="news-item">
+			    <p><a href="">About Device</a></p><p>See device details?</p>
+			</div>
+			<div class="news-item">
+			    <p><a href="">Instructions</a></p><p>Of api and SMS notifications.</p>
+			</div>
+			<div class="news-item">
+			    <p><a href="">Documentation</a></p><p>See documentation.</p>
+			</div>
+		</div>
+
+		<div class="news-box" id="graphs">
+		</div>
+{% endblock %}

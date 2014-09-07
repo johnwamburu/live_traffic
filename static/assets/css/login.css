@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import url(/static/assets/css/reset.css);
+#login h2 span[class*="fontawesome-"] {
+    margin-right: 14px;
+}
+body {
+	background-color: #dce0ed;
+	color: #000;
+	font-family: "Varela Round", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	-webkit-appearance: none;
+}
+
+/* ---------- LOGIN ---------- */
+
+#login {
+	margin: 20px auto;
+	width: 500px;
+}
+
+#login sup{vertical-align:super;font-size:12px;}
+
+#login .vx{
+	font-size:28px;
+	text-align:center;
+	margin:30px auto;
+	color:#777;
+}
+
+#login h2 {
+	background-color: /*#f95252*/#0BB5FF;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px 26px;
+}
+
+#login h2 span.fontawesome-lock {
+	background-image:url('/static/assets/images/lock.png');
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-right: 32px;
+}
+
+#login fieldset {
+	background-color: #fff;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
+}
+
+#login fieldset p {
+	color: #777;
+	margin-bottom: 14px;
+}
+
+#login fieldset p:last-child {
+	margin-bottom: 0;
+}
+
+#login fieldset input {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#login fieldset input[type="email"], #login fieldset input[type="password"], #login fieldset input[type="text"] {
+	background-color: #eee;
+	color: #777;
+	padding: 8px 10px;
+	width: 400px;
+	margin-top:10px;
+}
+
+#login fieldset input[type="submit"] {
+	background-color: /*#33cc77*/#0BB5FF;
+	color: #fff;
+	display: block;
+	margin: 10px;
+	padding: 10px 14px;
+	width: 100px;
+	float:right;
+}
+
+#login fieldset input[type="submit"]:hover {
+	background-color: /*#28ad63*/#f95252;
+	cursor:pointer;
+}
+
+#login .errorlist{
+	color:#ff0051;
+}
+
+#home-l-c{width:90%;margin:50px auto;}

@@ -1,0 +1,217 @@
+/*
+
+Darko Bunic
+http://www.redips.net/
+Mar, 2011.
+
+*/
+/*
+body{
+	font-family: arial;
+	margin: 0px; /* for IE6 / IE7 */
+/*}*/
+
+
+/* drag container */
+#main_container{
+	margin: 20px auto;
+	width: 770px;
+	border:1px solid #e4e4e4;
+	border-radius:5px;
+	padding:10px;
+	/*from body*/
+	font-family: arial;
+}
+		/* container for the left table */
+		#main_container #left{
+			width: 130px;
+			height: 320px;
+			float: left;
+			margin-right: 20px;
+		}
+		/* container for the main table and message line below */
+		#main_container #right{
+			width: 675px;
+			padding-left: auto;
+			padding-right: 0px;
+			/* align div to the right */
+			margin-left: auto;
+		}
+
+
+/* drag objects (DIV inside table cells) */
+.drag{
+	cursor: move;
+	margin: auto;
+	z-index: 10;
+	color: #222;
+	text-align: center;
+	font-size: 10pt; /* needed for cloned object */
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	/* without width, IE6/7 will not apply filter/opacity to the element ?! */
+	/* IE needs element layout */
+	width: 87px;
+	height: 20px;
+	line-height: 20px;
+	/* border */
+	border: 1px solid #555;
+	/* round corners */
+	border-radius: 3px;
+	-moz-border-radius: 3px; /* FF */
+}
+
+
+/* tables */
+div#drag table {
+	background-color: #dae5f4;/*#eee*/
+	border-collapse: collapse;
+}
+		/* timetable */
+		div#drag #table2 {
+			/* align table to the right */
+			margin-left: auto;
+		}
+
+
+/* table cells */
+div#drag td{
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	height: 22px;
+	text-align: center;
+	font-size: 10pt;
+	padding: 2px;
+}
+		/* overwrite border settings for left tables */
+		/* set all borders to 0px except border-bottom */
+		div#drag #table1 td{
+			border-width: 0px 0px 1px 0px;
+			height:30px;
+			padding-top:10px;
+		}
+			/* styles for clone DIV elements in left table */
+			div#drag #table1 div {
+				margin-left: 5px;
+				float: left;
+			}
+			/* define styles for buttons */
+			div#drag #table1 input {
+				float: right;
+				width: 15px;
+				height: 23px;
+				margin-right: 5px;
+				border-width: 1px;
+				/* round corners */
+				border-radius: 3px;
+				/* default visibility is hidden */
+				visibility: hidden;
+			}
+
+
+/* subject colors */
+.en {
+	background-color: #AAC8E2;
+}
+.ma {
+	background-color: #E7D783;
+}
+.ch {
+	background-color: #E99AE6;
+}
+.ki {
+	background-color: #C4AFFF;
+}
+.ph {
+	background-color: #91DEC5;
+}
+.ch {
+	background-color: #CFE17F;
+}
+.bi {
+	background-color: #E7BD83;
+}
+.ge {
+	background-color: #FFC5C2;
+}
+.hi {
+	background-color: #A5F09D;
+}
+.cr {
+	background-color: #AAC8E3;
+}
+.ar {
+	background-color: #E7D784;
+}
+.ho {
+	background-color: #E99AE7;
+}
+.ag {
+	background-color: #C4AFFE;
+}
+.bu {
+	background-color: #91DEC6;
+}
+.mu {
+	background-color: #CFE17E;
+}
+.fr {
+	background-color: #E7BD84;
+}
+.gr {
+	background-color: #FFC5C3;
+}
+
+
+/* blank cells (upper left corner) */
+.blank {
+	background-color: white;
+}
+
+
+/* background color for lunch */
+.lunch {
+	color: #665;
+	background-color: #f8eeee;
+	line-height:35px;
+}
+
+
+/* trash cell */
+.trash {
+	color: white;
+	background-color: #6386BD;
+}
+
+
+/* message line */
+#message{
+	background-color: #eee/*#aaa*/;
+	text-align: center;
+	margin-top: 20px;
+	padding:10px;
+	border-radius:6px;
+}
+
+
+/* dark cells (first column and table header) */
+.dark{
+	color: #444;
+	background-color: #e0e0e0;
+}
+
+.button_container{
+	padding-top: 10px;
+	text-align: right;
+}
+
+/* "Save" button */
+.button_container input{
+	font-weight:bold;
+	color: #ffffff;
+	background-color: #2ecc71;
+	border-radius:6px;
+	padding:6px 20px 6px 20px;
+	cursor:pointer;
+}

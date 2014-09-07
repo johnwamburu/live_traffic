@@ -1,0 +1,41 @@
+.LV_validation_message{
+    font-weight:normal;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+	background-image:url('/static/assets/images/present.png');
+	background-repeat:no-repeat;
+	background-position:left;
+	background-size:20px 20px;
+	margin-left:150px;
+	padding-left:20px;
+}
+	
+.LV_invalid {
+	background-image:url('/static/assets/images/absent.png');
+	background-repeat:no-repeat;
+	background-position:left;
+	background-size:20px 20px;
+	margin-left:150px;
+	padding-left:20px;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 1px solid #CC0000;
+}
+
+.adm-table th{width:230px}
+.adm-table .big-select{min-width:180px}

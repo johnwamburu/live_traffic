@@ -1,0 +1,83 @@
+
+/* Base Styles */
+#analyticsmenu,
+#analyticsmenu ul,
+#analyticsmenu li,
+#analyticsmenu a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+#analyticsmenu a {
+  line-height: 1.3;
+}
+#analyticsmenu {
+  width: 250px;
+}
+#analyticsmenu > ul > li > a {
+  padding-right: 40px;
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+  background: #0e99bc;
+  color: #ffffff;
+  border-bottom: 1px solid /*#074c5d*/#fff;
+  text-transform: uppercase;
+}
+#analyticsmenu > ul > li > a > span {
+  background: #12c0eb;
+  padding: 10px;
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+#analyticsmenu > ul > li > a:hover {
+  text-decoration: none;
+}
+#analyticsmenu > ul > li.active {
+  border-bottom: none;
+}
+#analyticsmenu > ul > li.active > a {
+  color: #fff;
+}
+#analyticsmenu > ul > li.active > a span {
+  background: #0e99bc;
+}
+#analyticsmenu span.cnt {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+/* Sub menu */
+#analyticsmenu ul ul {
+  display: none;
+}
+#analyticsmenu ul ul li {
+  border: 1px solid #e0e0e0;
+  border-top: 0;
+}
+#analyticsmenu ul ul a {
+  padding: 10px;
+  display: block;
+  color: /*#ed1144*/;
+  font-size: 13px;
+}
+#analyticsmenu ul ul a:hover {
+  color: /*#bd0e36*/#3c3c3c;
+}
+#analyticsmenu ul ul li.odd {
+  background: #f4f4f4;
+}
+#analyticsmenu ul ul li.even {
+  background: #fff;
+}
