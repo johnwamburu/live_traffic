@@ -1,0 +1,3 @@
+PythonForAndroid
+sl4a
+requests # python module
