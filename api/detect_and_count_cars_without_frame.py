@@ -35,7 +35,7 @@ def analyze_image(_image):
     my_images = '/home/john.wamburu/api/live_traffic/media/images/temp/image_%05d.jpg'
     cap = cv2.VideoCapture(my_images)
     # Get my classifier ready ...
-    car_cascade = cv2.CascadeClassifier(r'/home/john.wamburu/macau_traffic_data-master/cars3.xml')
+    car_cascade = cv2.CascadeClassifier(r'/home/john.wamburu/demo/cars3.xml')
     frames = 1
     for f in xrange(frames):
         ret, image = cap.read()
