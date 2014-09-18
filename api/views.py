@@ -14,15 +14,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
-class CaptureViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows image captures to be viewed or edited. Will remove "edited" when images start coming from an actual device.
-    And I do not like viewsets, so I will create view-based access first thing tomorrow.
-    """
-    queryset = Capture.objects.all()
-    serializer_class = CaptureSerializer
-
 @api_view(['GET', 'POST'])
 def capture_list(request):
     """
