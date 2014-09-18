@@ -65,29 +65,6 @@ def take_pictures():
         counter += 1
         #time.sleep(3) - do not sleep - this time will taken up in uploading, or??
 
-def upload():
-    """
-    Continously upload them as they are taken.
-    """
-    mtime = datetime.datetime.now()
-    counter = 0
-    while counter < 1000000:
-        try:
-            #m_image = open('/sdcard/traffic_images/image_%05d' % counter, 'rb')
-            # Get latest file in Dir
-            path = '/sdcard/traffic_images/'
-            m_image = max(glob.iglob(os.path.join(path, '*jpg')),key=os.path.getctime)
-            post_files = {'image':m_image}
-            post_data = {'time_taken':mtime, 'number_of_cars':0}
-            r = requests.post(url='http://127.0.0.1:8000/captures/', files=post_files, data=post_data, auth=HTTPBasicAuth('john.wamburu', 'john'))
-            print r.text
-            delete_image(m_image)
-        except IOError:
-            print "Unable to find file or directory!"
-        except Exception, e:
-            print e
-        counter += 1
-
 def delete_image(image):
     """
     Called immediately after upload, so we do not fill all space on device - KEY!
